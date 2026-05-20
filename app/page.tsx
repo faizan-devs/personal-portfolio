@@ -4,8 +4,9 @@ import ProjectCard from './components/ProjectCard';
 import BlogCard from './components/BlogCard';
 import OpenSourceCard from './components/OpenSourceCard';
 import LoadMoreButton from './components/LoadMoreButton';
-import Contact from './components/Contact';
-import { profileData, projects, blogs, openSource } from './data';
+import Skills from './components/Skills';
+import Experience from './components/Experience';
+import { profileData, projects, blogs, openSource, skills, experience } from './data';
 
 export default function Home() {
 	const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
@@ -20,7 +21,21 @@ export default function Home() {
 			<main className="main-content">
 				{/* Introduction */}
 				<Section title="Introduction" id="introduction">
-					<p className="intro-text">{profileData.bio}</p>
+					<div className="intro-copy">
+						{profileData.bio.split('\n\n').map((paragraph) => (
+							<p className="intro-text" key={paragraph}>
+								{paragraph}
+							</p>
+						))}
+					</div>
+				</Section>
+
+				<Section title="Skills" id="skills">
+					<Skills skills={skills} />
+				</Section>
+
+				<Section title="Experience" id="experience">
+					<Experience experience={experience} />
 				</Section>
 
 				{/* Projects */}
@@ -61,11 +76,6 @@ export default function Home() {
 					<div>
 						<LoadMoreButton href="/opensource" text="View All Contributions" />
 					</div>
-				</Section>
-
-				{/* Contact */}
-				<Section title="Contact" id="contact">
-					<Contact data={profileData} />
 				</Section>
 			</main>
 		</div>
