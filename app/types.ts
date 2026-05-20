@@ -29,6 +29,25 @@ export interface OpenSource {
   featured: boolean;
 }
 
+export interface Skill {
+  name: string;
+  logo: string;
+  color: string;
+}
+
+export interface Experience {
+  id: string;
+  company: string;
+  role: string;
+  location: string;
+  startDate: string;
+  endDate: string;
+  summary: string;
+  description: string;
+  highlights: string[];
+  tools: string[];
+}
+
 export interface SocialLink {
   name: string;
   url: string;
