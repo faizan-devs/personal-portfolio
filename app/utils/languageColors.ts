@@ -1,5 +1,5 @@
 export const languageColors: Record<string, string> = {
-	// Popular languages
+	// Programming languages
 	JavaScript: '#f7df1e',
 	TypeScript: '#3178c6',
 	Python: '#3572A5',
@@ -33,5 +33,5 @@ export const languageColors: Record<string, string> = {
 };
 
 export function getLanguageColor(language: string): string {
-	return languageColors[language] || '#8b949e'; // Default gray color
+	return languageColors[language] || '#8b949e';
 }
