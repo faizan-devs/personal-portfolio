@@ -32,11 +32,13 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 
 			{/* Blog Info */}
 			<div className="card-content">
-				<div className="card-meta">
-					<span className="badge">{blog.platform}</span>
-					<span className="date">{formatDate(blog.date)}</span>
+				<div className="card-heading">
+					<h3 className="card-title">{blog.title}</h3>
+					<div className="card-meta">
+						<span className="badge">{blog.platform}</span>
+						<span className="date">{formatDate(blog.date)}</span>
+					</div>
 				</div>
-				<h3 className="card-title">{blog.title}</h3>
 				<p className="card-description">{blog.description}</p>
 				{variant === 'detail' && (
 					<Link
@@ -45,7 +47,7 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 						rel="noopener noreferrer"
 						className="learn-more"
 					>
-						Show more →
+						Learn more →
 					</Link>
 				)}
 			</div>
