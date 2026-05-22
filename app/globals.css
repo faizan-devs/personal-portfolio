@@ -162,7 +162,11 @@ a.profile-detail:hover,
 	margin-bottom: 64px;
 }
 
-.section div{
+.section#experience {
+	margin-bottom: 38px;
+}
+
+.section > div{
 	padding-top: 6px;
 }
 
@@ -315,13 +319,6 @@ a.profile-detail:hover,
 	color: #ccc;
 }
 
-.experience-summary {
-	grid-column: 1 / -1;
-	color: #aaa;
-	font-size: 0.9rem;
-	line-height: 1.65;
-}
-
 .modal-backdrop {
 	position: fixed;
 	inset: 0;
@@ -336,9 +333,11 @@ a.profile-detail:hover,
 
 .experience-modal {
 	position: relative;
+	display: flex;
+	flex-direction: column;
 	width: min(680px, 100%);
 	max-height: min(760px, calc(100vh - 48px));
-	overflow-y: auto;
+	overflow: hidden;
 	padding: 28px;
 	background: #111;
 	border: 1px solid #3a3a3a;
@@ -391,8 +390,30 @@ a.profile-detail:hover,
 	line-height: 1.5;
 }
 
-.modal-description {
+.modal-scroll {
+	flex: 1 1 auto;
+	min-height: 0;
+	max-height: calc(100vh - 240px);
 	margin-top: 22px;
+	padding-right: 6px;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	scrollbar-color: #3f3f3f transparent;
+}
+
+.modal-section {
+	margin-bottom: 22px;
+}
+
+.modal-section-title {
+	margin-bottom: 9px;
+	color: #f2f2f2;
+	font-size: 0.9rem;
+	font-weight: 600;
+	line-height: 1.4;
+}
+
+.modal-description {
 	color: #cfcfcf;
 	font-size: 0.95rem;
 	line-height: 1.72;
@@ -401,7 +422,6 @@ a.profile-detail:hover,
 .modal-highlights {
 	display: grid;
 	gap: 10px;
-	margin: 22px 0;
 	padding-left: 20px;
 	color: #aaa;
 	font-size: 0.9rem;
@@ -441,11 +461,22 @@ a.profile-detail:hover,
 	min-width: 0;
 }
 
+.card-heading {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 16px;
+	margin-bottom: 8px;
+}
+
 .card-meta {
 	display: flex;
 	align-items: center;
-	gap: 12px;
-	margin-bottom: 8px;
+	justify-content: flex-end;
+	gap: 10px;
+	flex: 0 0 auto;
+	margin-left: auto;
+	text-align: right;
 }
 
 .badge {
@@ -461,12 +492,15 @@ a.profile-detail:hover,
 .date {
 	font-size: 0.75rem;
 	color: #666;
+	text-align: right;
+	white-space: nowrap;
 }
 
 .card-title {
 	font-size: 1.125rem;
 	font-weight: 600;
-	margin-bottom: 8px;
+	line-height: 1.35;
+	min-width: 0;
 }
 
 .card-description {
@@ -751,6 +785,16 @@ a.profile-detail:hover,
 
 	.card {
 		flex-direction: column;
+	}
+
+	.card-heading {
+		flex-direction: column;
+		gap: 8px;
+	}
+
+	.card-meta {
+		margin-left: 0;
+		text-align: left;
 	}
 
 	.card-image {
