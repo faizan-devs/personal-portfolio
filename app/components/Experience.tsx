@@ -47,7 +47,6 @@ export default function Experience({ experience }: ExperienceProps) {
 							</span>
 							<span>View details</span>
 						</div>
-						<p className="experience-summary">{item.summary}</p>
 					</button>
 				))}
 			</div>
@@ -78,20 +77,28 @@ export default function Experience({ experience }: ExperienceProps) {
 							{selected.role}
 						</h3>
 						<p className="modal-meta">
-							{selected.startDate} - {selected.endDate} · {selected.location}
+							{selected.startDate} - {selected.endDate} - {selected.location}
 						</p>
-						<p className="modal-description">{selected.description}</p>
-						<ul className="modal-highlights">
-							{selected.highlights.map((highlight) => (
-								<li key={highlight}>{highlight}</li>
-							))}
-						</ul>
-						<div className="tags">
-							{selected.tools.map((tool) => (
-								<span className="tag" key={tool}>
-									{tool}
-								</span>
-							))}
+						<div className="modal-scroll">
+							<section className="modal-section">
+								<h4 className="modal-section-title">Description</h4>
+								<p className="modal-description">{selected.description}</p>
+							</section>
+							<section className="modal-section">
+								<h4 className="modal-section-title">Highlights</h4>
+								<ul className="modal-highlights">
+									{selected.highlights.map((highlight, index) => (
+										<li key={`${selected.id}-highlight-${index}`}>{highlight}</li>
+									))}
+								</ul>
+							</section>
+							<div className="tags">
+								{selected.tools.map((tool) => (
+									<span className="tag" key={tool}>
+										{tool}
+									</span>
+								))}
+							</div>
 						</div>
 					</article>
 				</div>
