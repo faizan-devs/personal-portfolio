@@ -34,6 +34,7 @@ export const projects: Project[] = [
 			'A full-stack e-commerce platform built with Next.js, TypeScript, and PostgreSQL. Features include real-time inventory management, payment integration, and admin dashboard.',
 		image: '/images/project1.jpg',
 		link: 'https://github.com/yourusername/ecommerce',
+		startDate: 'Mar 2024',
 		tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe'],
 		featured: true,
 	},
@@ -44,6 +45,7 @@ export const projects: Project[] = [
 			'Collaborative task management application with real-time updates using WebSockets. Built with React, Node.js, and MongoDB.',
 		image: '/images/project2.jpg',
 		link: 'https://github.com/yourusername/taskapp',
+		startDate: 'Apr 2024',
 		tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
 		featured: true,
 	},
@@ -54,6 +56,7 @@ export const projects: Project[] = [
 			'Web application that generates images using AI models. Features include prompt engineering, image editing, and gallery management.',
 		image: '/images/project3.jpg',
 		link: 'https://github.com/yourusername/ai-generator',
+		startDate: 'May 2024',
 		tags: ['Python', 'FastAPI', 'React', 'Stable Diffusion'],
 		featured: true,
 	},
@@ -64,6 +67,7 @@ export const projects: Project[] = [
 			'Real-time weather dashboard with beautiful visualizations and forecasting.',
 		image: '/images/project4.jpg',
 		link: 'https://github.com/yourusername/weather',
+		startDate: 'Jun 2024',
 		tags: ['Vue.js', 'Chart.js', 'API Integration'],
 		featured: false,
 	},
@@ -74,6 +78,7 @@ export const projects: Project[] = [
 			'Analytics platform for tracking social media metrics and engagement.',
 		image: '/images/project5.jpg',
 		link: 'https://github.com/yourusername/analytics',
+		startDate: 'Jul 2024',
 		tags: ['React', 'D3.js', 'Firebase'],
 		featured: false,
 	},
@@ -90,7 +95,7 @@ export const skills: Skill[] = [
 	{ name: 'PostgreSQL', logo: 'Pg', color: '#4169e1' },
 	{ name: 'Docker', logo: 'Do', color: '#2496ed' },
 	{ name: 'Git', logo: 'Gt', color: '#f05032' },
-	{ name: 'Next.js', logo: 'Nx', color: '#fff' },
+	{ name: 'Next.js', logo: 'Nx', color: '#000000' },
 ];
 
 export const experience: Experience[] = [
@@ -101,8 +106,35 @@ export const experience: Experience[] = [
 		location: 'Mumbai, India',
 		startDate: '2024',
 		endDate: 'Present',
-		summary:
-			'Building backend systems, APIs, and AI-focused experiments with a focus on performance, security, and clean architecture.',
+		description:
+			'I work on backend-heavy applications where the core problems are API design, database structure, authentication, and reliable integrations. My current focus is improving how backend systems connect with AI and machine learning workflows while keeping the system scalable, secure, and maintainable.',
+		highlights: [
+			'Designed REST APIs with clear request validation and predictable response structures.',
+			'Worked with database schemas, authentication flows, and backend service organization.',
+			'Explored AI and ML integrations for practical application workflows.',
+			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Improved code structure with reusable backend patterns and cleaner error handling.',
+		],
+		tools: [
+			'Python',
+			'FastAPI',
+			'Node.js',
+			'Next.js',
+			'PostgreSQL',
+			'MongoDB',
+			'Docker',
+		],
+	},
+	{
+		id: '2',
+		company: 'Independent Projects',
+		role: 'Backend Developer',
+		location: 'Mumbai, India',
+		startDate: '2024',
+		endDate: 'Present',
 		description:
 			'I work on backend-heavy applications where the core problems are API design, database structure, authentication, and reliable integrations. My current focus is improving how backend systems connect with AI and machine learning workflows while keeping the system scalable, secure, and maintainable.',
 		highlights: [
