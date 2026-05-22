@@ -23,9 +23,15 @@ export default function ProjectCard({ project, variant = 'detail' }: ProjectCard
 
 			{/* Project Info */}
 			<div className="card-content">
-				<h3 className="card-title">
-					{project.title}
-				</h3>
+				<div className="card-heading">
+					<h3 className="card-title">
+						{project.title}
+					</h3>
+					<div className="card-meta">
+						<span className="badge">Started</span>
+						<span className="date">{project.startDate}</span>
+					</div>
+				</div>
 				<p className="card-description">
 					{project.description}
 				</p>
