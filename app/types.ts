@@ -4,6 +4,7 @@ export interface Project {
   description: string;
   image: string;
   link: string;
+  startDate: string;
   tags: string[];
   featured: boolean;
 }
@@ -42,7 +43,6 @@ export interface Experience {
   location: string;
   startDate: string;
   endDate: string;
-  summary: string;
   description: string;
   highlights: string[];
   tools: string[];
