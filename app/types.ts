@@ -20,16 +20,6 @@ export interface Blog {
   featured: boolean;
 }
 
-export interface OpenSource {
-  id: string;
-  title: string;
-  description: string;
-  repo: string;
-  stars: number;
-  language: string;
-  featured: boolean;
-}
-
 export interface Skill {
   name: string;
   logo: string;
@@ -43,7 +33,6 @@ export interface Experience {
   location: string;
   startDate: string;
   endDate: string;
-  description: string;
   highlights: string[];
   tools: string[];
 }
