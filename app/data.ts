@@ -1,11 +1,4 @@
-import {
-	ProfileData,
-	Project,
-	Blog,
-	OpenSource,
-	Skill,
-	Experience,
-} from './types';
+import { ProfileData, Project, Blog, Skill, Experience } from './types';
 
 export const profileData: ProfileData = {
 	name: 'Faizan Ali',
@@ -101,22 +94,17 @@ export const skills: Skill[] = [
 export const experience: Experience[] = [
 	{
 		id: '1',
-		company: 'Independent Projects',
-		role: 'Backend Developer',
-		location: 'Mumbai, India',
-		startDate: '2024',
+		company: 'Oraczen',
+		role: 'Principal Security Engineer',
+		location: 'Remote',
+		startDate: '2026',
 		endDate: 'Present',
-		description:
-			'I work on backend-heavy applications where the core problems are API design, database structure, authentication, and reliable integrations. My current focus is improving how backend systems connect with AI and machine learning workflows while keeping the system scalable, secure, and maintainable.',
 		highlights: [
-			'Designed REST APIs with clear request validation and predictable response structures.',
-			'Worked with database schemas, authentication flows, and backend service organization.',
-			'Explored AI and ML integrations for practical application workflows.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Built backend APIs with clear request validation, predictable responses, and clean route organization.',
+			'Designed database schemas and service layers for authentication, user data, and application workflows.',
+			'Connected backend systems with AI and machine learning experiments for practical product features.',
+			'Improved error handling, reusable backend patterns, and code structure across project modules.',
+			'Worked with Docker and cloud-ready setup patterns to keep services easier to run and maintain.',
 		],
 		tools: [
 			'Python',
@@ -130,18 +118,17 @@ export const experience: Experience[] = [
 	},
 	{
 		id: '2',
-		company: 'Independent Projects',
-		role: 'Backend Developer',
+		company: 'Insforge',
+		role: 'Backend Engineer',
 		location: 'Mumbai, India',
 		startDate: '2024',
-		endDate: 'Present',
-		description:
-			'I work on backend-heavy applications where the core problems are API design, database structure, authentication, and reliable integrations. My current focus is improving how backend systems connect with AI and machine learning workflows while keeping the system scalable, secure, and maintainable.',
+		endDate: '2026',
 		highlights: [
-			'Designed REST APIs with clear request validation and predictable response structures.',
-			'Worked with database schemas, authentication flows, and backend service organization.',
-			'Explored AI and ML integrations for practical application workflows.',
-			'Improved code structure with reusable backend patterns and cleaner error handling.',
+			'Built REST API endpoints for project features, data access, and secure client-server communication.',
+			'Worked on authentication flows, database models, and backend logic for real application use cases.',
+			'Tested AI-assisted workflows and studied how model outputs can connect safely with backend services.',
+			'Refined project structure so future features can be added without making the codebase harder to maintain.',
+			'Design Agentic workflow that can handle manage Google Calender and Google Gmail.',
 		],
 		tools: [
 			'Python',
@@ -198,49 +185,6 @@ export const blogs: Blog[] = [
 		link: 'https://medium.com/@yourusername/web-performance',
 		platform: 'medium',
 		date: '2024-02-28',
-		featured: false,
-	},
-];
-
-export const openSource: OpenSource[] = [
-	{
-		id: '1',
-		title: 'next-auth-starter',
-		description:
-			'A complete authentication starter template for Next.js with multiple providers, role-based access, and session management.',
-		repo: 'https://github.com/yourusername/next-auth-starter',
-		stars: 1240,
-		language: 'Ruby',
-		featured: true,
-	},
-	{
-		id: '2',
-		title: 'react-form-builder',
-		description:
-			'Drag-and-drop form builder component for React with validation, conditional logic, and export functionality.',
-		repo: 'https://github.com/yourusername/react-form-builder',
-		stars: 856,
-		language: 'JavaScript',
-		featured: true,
-	},
-	{
-		id: '3',
-		title: 'tailwind-components',
-		description:
-			'Collection of beautiful, accessible Tailwind CSS components ready to use in your projects.',
-		repo: 'https://github.com/yourusername/tailwind-components',
-		stars: 623,
-		language: 'TypeScript',
-		featured: true,
-	},
-	{
-		id: '4',
-		title: 'node-microservices',
-		description:
-			'Microservices architecture template with Node.js, Docker, and Kubernetes.',
-		repo: 'https://github.com/yourusername/node-microservices',
-		stars: 445,
-		language: 'JavaScript',
 		featured: false,
 	},
 ];
