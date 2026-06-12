@@ -12,13 +12,13 @@ export default function BlogsPage() {
 
 			{/* Header */}
 			<header className="listing-header">
-				<h1 className="listing-title">All Blogs</h1>
+				<h1 className="listing-title">All Posts</h1>
 				<p className="listing-description">
 					My thoughts, tutorials, and experiences in software development.
 				</p>
 			</header>
 
-			{/* Blogs Grid */}
+			{/* Posts Grid */}
 			<div className="listing-list">
 				{blogs.map((blog) => (
 					<BlogCard key={blog.id} blog={blog} />
