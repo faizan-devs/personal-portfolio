@@ -11,7 +11,7 @@ export default function LoadMoreButton({
 }: LoadMoreButtonProps) {
 	return (
 		<Link href={href} className="load-more">
-			{text} →
+			{text}
 		</Link>
 	);
 }
