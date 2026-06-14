@@ -88,7 +88,7 @@ export const skills: Skill[] = [
 	{ name: 'PostgreSQL', logo: 'Pg', color: '#4169e1' },
 	{ name: 'Docker', logo: 'Do', color: '#2496ed' },
 	{ name: 'Git', logo: 'Gt', color: '#f05032' },
-	{ name: 'Next.js', logo: 'Nx', color: '#000000' },
+	{ name: 'Next.js', logo: 'Nx', color: '#888888' },
 ];
 
 export const experience: Experience[] = [
