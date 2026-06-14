@@ -53,7 +53,7 @@ export default function Home() {
 							))}
 						</div>
 						<div>
-							<LoadMoreButton href="/projects" />
+							<LoadMoreButton href="/projects" text="View All Work" />
 						</div>
 					</Section>
 
@@ -65,7 +65,7 @@ export default function Home() {
 							))}
 						</div>
 						<div>
-							<LoadMoreButton href="/blogs" />
+							<LoadMoreButton href="/blogs" text="View All Posts" />
 						</div>
 					</Section>
 				</main>
