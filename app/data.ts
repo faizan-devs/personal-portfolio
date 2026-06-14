@@ -26,10 +26,11 @@ export const projects: Project[] = [
 		description:
 			'A full-stack e-commerce platform built with Next.js, TypeScript, and PostgreSQL. Features include real-time inventory management, payment integration, and admin dashboard.',
 		image: '/images/project1.jpg',
-		link: 'https://github.com/yourusername/ecommerce',
 		startDate: 'Mar 2024',
 		tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Stripe'],
 		featured: true,
+		githubLink: 'https://github.com/yourusername/ecommerce',
+		liveLink: 'https://ecommerce-demo.vercel.app',
 	},
 	{
 		id: '2',
@@ -37,10 +38,10 @@ export const projects: Project[] = [
 		description:
 			'Collaborative task management application with real-time updates using WebSockets. Built with React, Node.js, and MongoDB.',
 		image: '/images/project2.jpg',
-		link: 'https://github.com/yourusername/taskapp',
 		startDate: 'Apr 2024',
 		tags: ['React', 'Node.js', 'MongoDB', 'Socket.io'],
 		featured: true,
+		githubLink: 'https://github.com/yourusername/ecommerce',
 	},
 	{
 		id: '3',
@@ -48,10 +49,11 @@ export const projects: Project[] = [
 		description:
 			'Web application that generates images using AI models. Features include prompt engineering, image editing, and gallery management.',
 		image: '/images/project3.jpg',
-		link: 'https://github.com/yourusername/ai-generator',
 		startDate: 'May 2024',
 		tags: ['Python', 'FastAPI', 'React', 'Stable Diffusion'],
 		featured: true,
+		githubLink: 'https://github.com/yourusername/ecommerce',
+		liveLink: 'https://ecommerce-demo.vercel.app',
 	},
 	{
 		id: '4',
@@ -59,10 +61,10 @@ export const projects: Project[] = [
 		description:
 			'Real-time weather dashboard with beautiful visualizations and forecasting.',
 		image: '/images/project4.jpg',
-		link: 'https://github.com/yourusername/weather',
 		startDate: 'Jun 2024',
 		tags: ['Vue.js', 'Chart.js', 'API Integration'],
 		featured: false,
+		githubLink: 'https://github.com/yourusername/ecommerce',
 	},
 	{
 		id: '5',
@@ -70,10 +72,11 @@ export const projects: Project[] = [
 		description:
 			'Analytics platform for tracking social media metrics and engagement.',
 		image: '/images/project5.jpg',
-		link: 'https://github.com/yourusername/analytics',
 		startDate: 'Jul 2024',
 		tags: ['React', 'D3.js', 'Firebase'],
 		featured: false,
+		githubLink: 'https://github.com/yourusername/ecommerce',
+		liveLink: 'https://ecommerce-demo.vercel.app',
 	},
 ];
 
