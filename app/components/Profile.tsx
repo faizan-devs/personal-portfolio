@@ -16,7 +16,7 @@ export default function Profile({ data }: ProfileProps) {
 					fill
 					className="object-cover"
 					priority
-					sizes="112px"
+					sizes="300px"
 				/>
 			</div>
 
@@ -49,10 +49,15 @@ export default function Profile({ data }: ProfileProps) {
 					<LocationIcon />
 					<span>{data.location}</span>
 				</p>
-				<Link className="profile-detail profile-cv" href={data.resumeUrl} target="_blank">
+				<p className="profile-detail">
 					<CvIcon />
-					<span>CV</span>
-				</Link>
+					<span>
+						<Link className="profile-cv-link" href={data.resumeUrl} target="_blank">
+							CV
+						</Link>{' '}
+						<span className="profile-cv-note">(as of early 2026)</span>
+					</span>
+				</p>
 			</div>
 		</aside>
 	);
