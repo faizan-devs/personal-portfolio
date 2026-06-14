@@ -35,7 +35,6 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 				<div className="card-heading">
 					<h3 className="card-title">{blog.title}</h3>
 					<div className="card-meta">
-						<span className="badge">{blog.platform}</span>
 						<span className="date">{formatDate(blog.date)}</span>
 					</div>
 				</div>
