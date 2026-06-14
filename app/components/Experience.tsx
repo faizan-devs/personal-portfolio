@@ -82,7 +82,10 @@ export default function Experience({ experience }: ExperienceProps) {
 						<div className="modal-scroll">
 							<ul className="modal-work-list">
 								{selected.highlights.map((item, index) => (
-									<li className="modal-work-item" key={`${selected.id}-work-${index}`}>
+									<li
+										className="modal-work-item"
+										key={`${selected.id}-work-${index}`}
+									>
 										{item}
 									</li>
 								))}
