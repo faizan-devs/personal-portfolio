@@ -46,7 +46,7 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 						rel="noopener noreferrer"
 						className="learn-more"
 					>
-						Learn more →
+						Read more →
 					</Link>
 				)}
 			</div>
