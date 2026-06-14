@@ -7,7 +7,10 @@ interface ProjectCardProps {
 	variant?: 'teaser' | 'detail';
 }
 
-export default function ProjectCard({ project, variant = 'detail' }: ProjectCardProps) {
+export default function ProjectCard({
+	project,
+	variant = 'detail',
+}: ProjectCardProps) {
 	const content = (
 		<>
 			{/* Project Image */}
@@ -24,45 +27,42 @@ export default function ProjectCard({ project, variant = 'detail' }: ProjectCard
 			{/* Project Info */}
 			<div className="card-content">
 				<div className="card-heading">
-					<h3 className="card-title">
-						{project.title}
-					</h3>
+					<h3 className="card-title">{project.title}</h3>
 					<div className="card-meta">
 						<span className="badge">Started</span>
 						<span className="date">{project.startDate}</span>
 					</div>
 				</div>
-				<p className="card-description">
-					{project.description}
-				</p>
+				<p className="card-description">{project.description}</p>
 				<div className="tags">
 					{project.tags.map((tag) => (
-						<span
-							key={tag}
-							className="tag"
-						>
+						<span key={tag} className="tag">
 							{tag}
 						</span>
 					))}
 				</div>
 				{variant === 'detail' && (
 					<div className="card-actions">
-						<Link
-							href={project.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="card-action primary"
-						>
-							View
-						</Link>
-						<Link
-							href={project.link}
-							target="_blank"
-							rel="noopener noreferrer"
-							className="card-action"
-						>
-							GitHub
-						</Link>
+						{project.liveLink && (
+							<Link
+								href={project.liveLink}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="card-action primary"
+							>
+								View
+							</Link>
+						)}
+						{project.githubLink && (
+							<Link
+								href={project.githubLink}
+								target="_blank"
+								rel="noopener noreferrer"
+								className="card-action"
+							>
+								GitHub
+							</Link>
+						)}
 					</div>
 				)}
 			</div>
@@ -77,9 +77,5 @@ export default function ProjectCard({ project, variant = 'detail' }: ProjectCard
 		);
 	}
 
-	return (
-		<div className="card">
-			{content}
-		</div>
-	);
+	return <div className="card">{content}</div>;
 }
