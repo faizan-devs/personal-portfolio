@@ -52,7 +52,11 @@ export default function Profile({ data }: ProfileProps) {
 				<p className="profile-detail">
 					<CvIcon />
 					<span>
-						<Link className="profile-cv-link" href={data.resumeUrl} target="_blank">
+						<Link
+							className="profile-cv-link"
+							href={data.resumeUrl}
+							target="_blank"
+						>
 							CV
 						</Link>{' '}
 						<span className="profile-cv-note">(as of early 2026)</span>
