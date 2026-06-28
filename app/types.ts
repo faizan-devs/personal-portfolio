@@ -47,6 +47,7 @@ export interface SocialLink {
 export interface ProfileData {
 	name: string;
 	role: string;
+	tagline: string;
 	bio: string;
 	avatar: string;
 	resumeUrl: string;
