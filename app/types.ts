@@ -16,7 +16,6 @@ export interface Blog {
 	description: string;
 	image: string;
 	link: string;
-	platform: 'hashnode' | 'medium';
 	date: string;
 	featured: boolean;
 }
