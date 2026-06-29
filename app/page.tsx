@@ -5,19 +5,13 @@ import BlogCard from './components/BlogCard';
 import LoadMoreButton from './components/LoadMoreButton';
 import Skills from './components/Skills';
 import Experience from './components/Experience';
+import About from './components/About';
 import { profileData, projects, blogs, skills, experience } from './data';
 
 export default function Home() {
 	const featuredProjects = projects.filter((p) => p.featured).slice(0, 3);
 	const featuredBlogs = blogs.filter((b) => b.featured).slice(0, 3);
-	const aboutText = profileData.bio.replace(/\s*\n+\s*/g, ' ');
-	const githubLink = profileData.socialLinks.find(
-		(link) => link.name === 'GitHub',
-	);
-	const linkedInLink = profileData.socialLinks.find(
-		(link) => link.name === 'LinkedIn',
-	);
-	const xLink = profileData.socialLinks.find((link) => link.name === 'X');
+	const firstName = profileData.name.split(' ')[0];
 
 	return (
 		<div className="home-shell">
@@ -27,17 +21,15 @@ export default function Home() {
 				{/* Main Content */}
 				<main className="main-content">
 					{/* About */}
-					<Section title="About" id="about">
-						<div className="intro-copy">
-							<p className="intro-text">{aboutText}</p>
-						</div>
+					<Section title="" id="about">
+						<About bio={profileData.bio} />
 					</Section>
 
-					<Section title="Skills" id="skills">
+					<Section title="" id="skills">
 						<Skills skills={skills} />
 					</Section>
 
-					<Section title="Where I've Worked" id="experience">
+					<Section title="Experience" id="experience">
 						<Experience experience={experience} />
 					</Section>
 
@@ -68,45 +60,67 @@ export default function Home() {
 							<LoadMoreButton href="/blogs" text="View All Posts" />
 						</div>
 					</Section>
+
+					<footer className="site-footer">
+						<div className="footer-identity">
+							<p className="footer-name">{firstName} &copy; 2026</p>
+							<p className="footer-role">{profileData.role}</p>
+						</div>
+						<div className="footer-column">
+							<p className="footer-heading">Connect</p>
+							<nav className="footer-links" aria-label="Social links">
+								{profileData.socialLinks.map((link) => (
+									<a
+										key={link.name}
+										href={link.url}
+										target="_blank"
+										rel="noopener noreferrer"
+									>
+										{link.name}
+									</a>
+								))}
+							</nav>
+						</div>
+						<div className="footer-column footer-contact">
+							<p className="footer-heading">Get in Touch</p>
+							<nav className="footer-links" aria-label="Contact">
+								<a
+									className="footer-email"
+									href={`mailto:${profileData.email}`}
+								>
+									<EmailIcon />
+									<span>{profileData.email}</span>
+								</a>
+								<a
+									className="footer-resume"
+									href={profileData.resumeUrl}
+									target="_blank"
+									rel="noopener noreferrer"
+								>
+									Resume
+									<ExternalIcon />
+								</a>
+							</nav>
+						</div>
+					</footer>
 				</main>
 			</div>
-
-			<footer className="site-footer">
-				<div className="footer-identity">
-					<p className="footer-name">{profileData.name} &copy; 2026</p>
-					<p className="footer-role">Backend Developer</p>
-				</div>
-				<nav className="footer-links" aria-label="Footer links">
-					<a href="/blogs">Blogs</a>
-					<a href={`mailto:${profileData.email}`}>Mail</a>
-					<a
-						href={profileData.resumeUrl}
-						target="_blank"
-						rel="noopener noreferrer"
-					>
-						Resume
-					</a>
-					{githubLink && (
-						<a href={githubLink.url} target="_blank" rel="noopener noreferrer">
-							GitHub
-						</a>
-					)}
-					{linkedInLink && (
-						<a
-							href={linkedInLink.url}
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							LinkedIn
-						</a>
-					)}
-					{xLink && (
-						<a href={xLink.url} target="_blank" rel="noopener noreferrer">
-							X
-						</a>
-					)}
-				</nav>
-			</footer>
 		</div>
+	);
+}
+
+function EmailIcon() {
+	return (
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path d="M3.75 5.5h16.5v13H3.75v-13Zm1.5 1.5v.72L12 12.1l6.75-4.38V7H5.25Zm13.5 2.5L12 13.87 5.25 9.5V17h13.5V9.5Z" />
+		</svg>
+	);
+}
+
+function ExternalIcon() {
+	return (
+		<svg viewBox="0 0 24 24" aria-hidden="true">
+			<path d="M7 6.25v1.5h8.19L6.47 16.47l1.06 1.06 8.72-8.72V17h1.5V6.25H7Z" />
+		</svg>
 	);
 }
