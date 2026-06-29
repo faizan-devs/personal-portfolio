@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import ThemeToggle from './components/ThemeToggle';
 
 export const metadata: Metadata = {
 	title: 'Faizan Ali - Portfolio',
@@ -29,8 +30,29 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body className="antialiased">{children}</body>
+		<html lang="en" suppressHydrationWarning>
+			<head>
+				<script
+					dangerouslySetInnerHTML={{
+						__html: `
+							(function() {
+								try {
+									var theme = localStorage.getItem('theme');
+									if (theme === 'light') {
+										document.documentElement.classList.add('light');
+									} else {
+										document.documentElement.classList.remove('light');
+									}
+								} catch (e) {}
+							})();
+						`,
+					}}
+				/>
+			</head>
+			<body className="antialiased">
+				{children}
+				<ThemeToggle />
+			</body>
 		</html>
 	);
 }
