@@ -90,6 +90,14 @@ export default function Experience({ experience }: ExperienceProps) {
 									</li>
 								))}
 							</ul>
+
+							<div className="modal-tools">
+								{selected.tools.map((tool) => (
+									<span key={tool} className="tag">
+										{tool}
+									</span>
+								))}
+							</div>
 						</div>
 					</article>
 				</div>
