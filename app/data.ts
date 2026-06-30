@@ -103,7 +103,7 @@ export const experience: Experience[] = [
 		id: '1',
 		company: 'Freelance',
 		role: 'Backend Engineer',
-		location: 'Mumbai, India - (Remote)',
+		location: 'Mumbai, India . (Remote)',
 		startDate: '2026',
 		endDate: 'Present',
 		highlights: [
