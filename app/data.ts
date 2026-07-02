@@ -96,6 +96,7 @@ export const skills: Skill[] = [
 	{ name: 'Jenkins', logo: 'jenkins', color: '#d24939' },
 	{ name: 'Git', logo: 'git', color: '#f05032' },
 	{ name: 'Next.js', logo: 'nextdotjs', color: '#f5f5f5' },
+	{ name: 'Jest', logo: 'jest', color: '#C21325' },
 ];
 
 export const experience: Experience[] = [
