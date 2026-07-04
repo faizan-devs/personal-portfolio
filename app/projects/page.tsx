@@ -14,7 +14,7 @@ export default function ProjectsPage() {
 			<header className="listing-header">
 				<h1 className="listing-title">What I&apos;ve Built</h1>
 				<p className="listing-description">
-					A collection of my work and side projects.
+					A collection of my work and projects.
 				</p>
 			</header>
 
