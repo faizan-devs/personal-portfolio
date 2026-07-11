@@ -7,10 +7,7 @@ interface ProjectCardProps {
 	variant?: 'teaser' | 'detail';
 }
 
-export default function ProjectCard({
-	project,
-	variant = 'detail',
-}: ProjectCardProps) {
+export default function ProjectCard({ project }: ProjectCardProps) {
 	const content = (
 		<>
 			{/* Project Image */}
@@ -26,12 +23,32 @@ export default function ProjectCard({
 
 			{/* Project Info */}
 			<div className="card-content">
-				<div className="card-heading">
+				<div className="card-heading project-card-heading">
 					<h3 className="card-title">{project.title}</h3>
-					<div className="card-meta">
-						<span className="badge">Started</span>
-						<span className="date">{project.startDate}</span>
-					</div>
+					{(project.githubLink || project.liveLink) && (
+						<div className="card-actions card-heading-actions">
+							{project.githubLink && (
+								<Link
+									href={project.githubLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="card-action"
+								>
+									GitHub
+								</Link>
+							)}
+							{project.liveLink && (
+								<Link
+									href={project.liveLink}
+									target="_blank"
+									rel="noopener noreferrer"
+									className="card-action primary"
+								>
+									View
+								</Link>
+							)}
+						</div>
+					)}
 				</div>
 				<p className="card-description">{project.description}</p>
 				<div className="tags">
@@ -41,41 +58,9 @@ export default function ProjectCard({
 						</span>
 					))}
 				</div>
-				{variant === 'detail' && (
-					<div className="card-actions">
-						{project.liveLink && (
-							<Link
-								href={project.liveLink}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="card-action primary"
-							>
-								View
-							</Link>
-						)}
-						{project.githubLink && (
-							<Link
-								href={project.githubLink}
-								target="_blank"
-								rel="noopener noreferrer"
-								className="card-action"
-							>
-								GitHub
-							</Link>
-						)}
-					</div>
-				)}
 			</div>
 		</>
 	);
-
-	if (variant === 'teaser') {
-		return (
-			<Link href="/projects" className="card">
-				{content}
-			</Link>
-		);
-	}
 
 	return <div className="card">{content}</div>;
 }
