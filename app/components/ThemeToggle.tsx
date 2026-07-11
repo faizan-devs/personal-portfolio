@@ -3,19 +3,19 @@
 import { useEffect, useState } from 'react';
 
 export default function ThemeToggle() {
-	const [theme, setTheme] = useState<'dark' | 'light'>('dark');
+	const [currentTheme, setCurrentTheme] = useState<'dark' | 'light'>('dark');
 	const [mounted, setMounted] = useState(false);
 
 	useEffect(() => {
 		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setMounted(true);
 		const isLight = document.documentElement.classList.contains('light');
-		setTheme(isLight ? 'light' : 'dark');
+		setCurrentTheme(isLight ? 'light' : 'dark');
 	}, []);
 
 	const toggleTheme = () => {
-		const nextTheme = theme === 'dark' ? 'light' : 'dark';
-		setTheme(nextTheme);
+		const nextTheme = currentTheme === 'dark' ? 'light' : 'dark';
+		setCurrentTheme(nextTheme);
 		if (nextTheme === 'light') {
 			document.documentElement.classList.add('light');
 			localStorage.setItem('theme', 'light');
@@ -29,49 +29,63 @@ export default function ThemeToggle() {
 		return <div className="theme-toggle-placeholder" />;
 	}
 
+	const isLightTheme = currentTheme === 'light';
+
 	return (
 		<button
 			onClick={toggleTheme}
-			className="theme-toggle-btn"
-			aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} theme`}
+			className={`theme-toggle-btn ${
+				isLightTheme ? 'theme-toggle-dark' : 'theme-toggle-light'
+			}`}
+			data-theme={currentTheme}
+			aria-label={`Switch to ${isLightTheme ? 'dark' : 'light'} theme`}
+			title={`Switch to ${isLightTheme ? 'dark' : 'light'} theme`}
 		>
 			<span className="theme-toggle-icon-wrapper">
-				{theme === 'dark' ? (
-					// Moon Icon
-					<svg
-						className="theme-icon moon-icon"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2.2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-					</svg>
-				) : (
-					// Sun Icon
-					<svg
-						className="theme-icon sun-icon"
-						viewBox="0 0 24 24"
-						fill="none"
-						stroke="currentColor"
-						strokeWidth="2.2"
-						strokeLinecap="round"
-						strokeLinejoin="round"
-					>
-						<circle cx="12" cy="12" r="5" />
-						<line x1="12" y1="1" x2="12" y2="3" />
-						<line x1="12" y1="21" x2="12" y2="23" />
-						<line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
-						<line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
-						<line x1="1" y1="12" x2="3" y2="12" />
-						<line x1="21" y1="12" x2="23" y2="12" />
-						<line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
-						<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
-					</svg>
-				)}
+				{isLightTheme ? <MoonIcon /> : <SunIcon />}
 			</span>
 		</button>
+	);
+}
+
+function MoonIcon() {
+	return (
+		<svg
+			className="theme-icon moon-icon"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2.2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+		>
+			<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+		</svg>
+	);
+}
+
+function SunIcon() {
+	return (
+		<svg
+			className="theme-icon sun-icon"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2.2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+			aria-hidden="true"
+		>
+			<circle cx="12" cy="12" r="5" />
+			<line x1="12" y1="1" x2="12" y2="3" />
+			<line x1="12" y1="21" x2="12" y2="23" />
+			<line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+			<line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+			<line x1="1" y1="12" x2="3" y2="12" />
+			<line x1="21" y1="12" x2="23" y2="12" />
+			<line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+			<line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+		</svg>
 	);
 }
