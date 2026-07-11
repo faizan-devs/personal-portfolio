@@ -64,7 +64,7 @@ export default function Home() {
 					<footer className="site-footer">
 						<div className="footer-identity">
 							<p className="footer-name">{firstName} &copy; 2026</p>
-							<p className="footer-role">{profileData.role}</p>
+							<p className="footer-role">{profileData.location}</p>
 						</div>
 						<div className="footer-column">
 							<p className="footer-heading">Connect</p>
