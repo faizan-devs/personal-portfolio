@@ -30,6 +30,8 @@
 	--bg-button-hover: #222222;
 	--learn-more-color: #60a5fa;
 	--learn-more-hover: #93c5fd;
+	--selection-bg: color-mix(in srgb, var(--text-muted), transparent 58%);
+	--selection-text: var(--text-title);
 	--shadow-avatar: 0 18px 48px rgba(0, 0, 0, 0.24);
 	--modal-shadow: 0 22px 80px rgba(0, 0, 0, 0.48);
 }
@@ -64,6 +66,8 @@
 	--bg-button-hover: #e4e4e7;
 	--learn-more-color: #2563eb;
 	--learn-more-hover: #1d4ed8;
+	--selection-bg: color-mix(in srgb, var(--text-muted), transparent 18%);
+	--selection-text: var(--background);
 	--shadow-avatar: 0 18px 48px rgba(0, 0, 0, 0.08);
 	--modal-shadow: 0 22px 80px rgba(0, 0, 0, 0.1);
 }
@@ -86,6 +90,11 @@ body {
 		sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+	background: var(--selection-bg);
+	color: var(--selection-text);
 }
 
 a {
@@ -323,6 +332,26 @@ a {
 	color: var(--skill-color);
 }
 
+:root.light .skill-logo {
+	background: color-mix(
+		in srgb,
+		var(--skill-light-color, var(--skill-color)),
+		transparent 88%
+	);
+	border-color: color-mix(
+		in srgb,
+		var(--skill-light-color, var(--skill-color)),
+		transparent 70%
+	);
+	color: var(--skill-light-color, var(--skill-color));
+}
+
+:root.light .skill-pill[data-logo='express'] .skill-logo,
+:root.light .skill-pill[data-logo='nextdotjs'] .skill-logo {
+	background: rgba(0, 0, 0, 0.08);
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
 .skill-logo-text {
 	display: inline-flex;
 	align-items: center;
@@ -344,6 +373,10 @@ a {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: contain;
+}
+
+:root.light .skill-logo-mark {
+	background-image: var(--skill-logo-url-light);
 }
 
 .skill-name {
@@ -370,14 +403,12 @@ a {
 	text-align: left;
 	cursor: pointer;
 	transition:
-		transform 0.2s,
 		border-color 0.2s,
 		background 0.2s;
 }
 
 .experience-card:hover,
 .experience-card:focus-visible {
-	transform: translateY(-2px);
 	border-color: var(--border-hover);
 	background: var(--card-bg-hover);
 	outline: none;
@@ -535,12 +566,19 @@ a {
 .card {
 	display: flex;
 	gap: 16px;
+	padding: 12px;
+	background: transparent;
+	border: 1px solid transparent;
+	border-radius: 10px;
 	margin-bottom: 32px;
-	transition: transform 0.2s;
+	transition:
+		border-color 0.2s,
+		background 0.2s;
 }
 
 .card:hover {
-	transform: translateY(-2px);
+	background: var(--card-bg-hover);
+	border-color: var(--border-hover);
 }
 
 .card-image {
@@ -692,6 +730,10 @@ a {
 	min-width: 0;
 }
 
+.project-card-heading .card-title {
+	flex: 1 1 auto;
+}
+
 .card-description {
 	color: var(--text-muted);
 	font-size: 0.875rem;
@@ -719,6 +761,14 @@ a {
 	flex-wrap: wrap;
 	gap: 10px;
 	margin-top: 14px;
+}
+
+.card-heading-actions {
+	flex: 0 0 auto;
+	flex-wrap: nowrap;
+	justify-content: flex-end;
+	margin-top: 0;
+	margin-left: auto;
 }
 
 .card-action {
@@ -1007,6 +1057,16 @@ a {
 		gap: 8px;
 	}
 
+	.project-card-heading {
+		flex-direction: row;
+		align-items: flex-start;
+		gap: 12px;
+	}
+
+	.card-heading-actions {
+		margin-left: auto;
+	}
+
 	.card-meta {
 		margin-left: 0;
 		text-align: left;
@@ -1067,7 +1127,21 @@ a {
 .theme-toggle-btn:hover {
 	border-color: rgba(128, 128, 128, 0.55);
 	background: rgba(255, 255, 255, 0.08);
-	color: var(--text-muted);
+	color: #9d9c9b;
+}
+
+.theme-toggle-dark,
+.theme-toggle-light {
+	background: transparent;
+	border-color: rgba(128, 128, 128, 0.2);
+	color: #868b91;
+}
+
+.theme-toggle-dark:hover,
+.theme-toggle-light:hover {
+	border-color: rgba(128, 128, 128, 0.55);
+	background: rgba(255, 255, 255, 0.08);
+	color: #9d9c9b;
 }
 
 .theme-toggle-placeholder {
