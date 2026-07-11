@@ -7,7 +7,7 @@ interface BlogCardProps {
 	variant?: 'teaser' | 'detail';
 }
 
-export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
+export default function BlogCard({ blog }: BlogCardProps) {
 	const formatDate = (dateString: string) => {
 		const date = new Date(dateString);
 		return date.toLocaleDateString('en-US', {
@@ -17,8 +17,8 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 		});
 	};
 
-	const content = (
-		<>
+	return (
+		<div className="card">
 			{/* Blog Image */}
 			<div className="card-image">
 				<Image
@@ -39,27 +39,17 @@ export default function BlogCard({ blog, variant = 'detail' }: BlogCardProps) {
 					</div>
 				</div>
 				<p className="card-description">{blog.description}</p>
-				{variant === 'detail' && (
+				<div className="card-actions">
 					<Link
 						href={blog.link}
 						target="_blank"
 						rel="noopener noreferrer"
-						className="learn-more"
+						className="card-action primary"
 					>
-						Read more →
+						Read more
 					</Link>
-				)}
+				</div>
 			</div>
-		</>
+		</div>
 	);
-
-	if (variant === 'teaser') {
-		return (
-			<Link href="/blogs" className="card">
-				{content}
-			</Link>
-		);
-	}
-
-	return <div className="card">{content}</div>;
 }
