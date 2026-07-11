@@ -93,6 +93,7 @@ export const skills: Skill[] = [
 	{ name: 'REST APIs', logo: 'openapiinitiative', color: '#6ba539' },
 	{ name: 'PostgreSQL', logo: 'postgresql', color: '#4169e1' },
 	{ name: 'Docker', logo: 'docker', color: '#2496ed' },
+	{ name: 'Linux', logo: 'linux', color: '#fcc624' },
 	{ name: 'Jenkins', logo: 'jenkins', color: '#d24939' },
 	{ name: 'Git', logo: 'git', color: '#f05032' },
 	{ name: 'Next.js', logo: 'nextdotjs', color: '#f5f5f5' },
