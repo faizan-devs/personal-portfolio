@@ -93,7 +93,7 @@ export default function Experience({ experience }: ExperienceProps) {
 
 							<div className="modal-tools">
 								{selected.tools.map((tool) => (
-									<span key={tool} className="tag">
+									<span key={tool} className="modal-tool">
 										{tool}
 									</span>
 								))}
